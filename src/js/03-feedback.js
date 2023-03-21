@@ -18,15 +18,15 @@ function textareaMessage() {
         inputEmail.value = savedMessage.email;
         inputTextarea.value = savedMessage.message;
     } 
-    console.log("email:", inputEmail.value);
-    console.log("message:", inputTextarea.value);
 }
 textareaMessage();
+
 form.addEventListener('submit', handleFormSubmit);
 function handleFormSubmit(e) {
     e.preventDefault();
-    if (inputEmail.value === "" || inputTextarea.value === "") {
-        return alert('Всі поля повинні бути заповнені');
-    } localStorage.removeItem(STORAGE_KEY);
+    console.log("email:", inputEmail.value);
+    console.log("message:", inputTextarea.value);
+   
     e.currentTarget.reset();
+    localStorage.removeItem(STORAGE_KEY);
  };
